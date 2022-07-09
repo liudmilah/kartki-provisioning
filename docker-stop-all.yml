@@ -1,0 +1,9 @@
+---
+-   name: Stop all containers
+    hosts: site
+    remote_user: root
+    become: yes
+    become_user: deploy
+    tasks:
+        -   name: Stop all containers
+            shell: "docker kill $(docker ps -q)"
